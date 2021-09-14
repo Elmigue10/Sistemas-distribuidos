@@ -14,14 +14,14 @@ let alumnoEncontradoContainer = document.getElementById("alumno-encontrado-conta
 let alumnos
 const obtenerAlumnos = () => {
     axios.get("http://localhost:8080/alumno")
-    .then((res) => {
-       
-        alumnos = res.data
-        console.log("Respuesta obtenida: ", alumnos)
-        renderAlumnos()
+        .then((res) => {
 
-    }).catch((err) => {
-        
+            alumnos = res.data
+            console.log("Respuesta obtenida: ", alumnos)
+            renderAlumnos()
+
+        }).catch((err) => {
+
         console.error("Se produjo un error: ", err)
 
     });
@@ -37,7 +37,7 @@ const obetnerAlumnoId = async () => {
     await renderAlumno(alumnoEncontradoContainer, alumno)
     let editarIdBtn = await document.getElementById("editar-id-btn")
     let eliminarIdBtn = await document.getElementById("eliminar-id-btn")
-    editarIdBtn.addEventListener("click",()=>{
+    editarIdBtn.addEventListener("click", () => {
         llenarFormularioAlumno()
     })
     eliminarIdBtn.addEventListener("click", () => {
@@ -71,11 +71,11 @@ const editarAlumno = async () => {
         method: 'put',
         url: `http://localhost:8080/alumno/${idEditInput.value}`,
         data: {
-            nombre:nombreEditInput.value,
-            edad:edadEditInput.value
+            nombre: nombreEditInput.value,
+            edad: edadEditInput.value
         }
     })
-    
+
     await obtenerAlumnos()
 
     idInput.value = ""
@@ -84,7 +84,7 @@ const editarAlumno = async () => {
 
 }
 
-guardarEditBtn.addEventListener("click",()=>{
+guardarEditBtn.addEventListener("click", () => {
     editarAlumno()
 })
 
@@ -102,8 +102,8 @@ const eliminarAlumno = async () => {
 }
 
 const renderAlumnos = () => {
-    let alumnosRender = alumnos.map((alumno, indice)=>{
-            return `
+    let alumnosRender = alumnos.map((alumno, indice) => {
+        return `
             <tr>
                 <td>${alumno.id ? alumno.id : "Id vacio"}</td>
                 <td>${alumno.nombre ? alumno.nombre : "Nombre vacio"}</td>
@@ -112,7 +112,7 @@ const renderAlumnos = () => {
                 <td><button class="eliminar-button" data-indice=${indice}>Eliminar</button></td>
             </tr>
             `
-        }).join("")
+    }).join("")
 
     alumnosList.innerHTML = alumnosRender
 
@@ -153,7 +153,7 @@ const renderAlumno = (tag, obj) => {
 }
 
 const llenarFormularioAlumnos = (e) => {
-    if(e.target.dataset.indice){
+    if (e.target.dataset.indice) {
         const alumnoEditar = alumnos[e.target.dataset.indice]
         idEditInput.value = alumnoEditar.id ? alumnoEditar.id : ""
         nombreEditInput.value = alumnoEditar.nombre ? alumnoEditar.nombre : ""

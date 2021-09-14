@@ -1,0 +1,26 @@
+docker network create --attachable spring-mysql
+docker network inspect spring-mysql
+
+MYSQL
+docker pull mysql
+docker run -d -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
+docker network connect spring-mysql mysql-db
+
+docker exec -it mysql-db mysql -p
+
+API REST MYSQL
+mvn clean install
+docker build -t crud-spring-mysql .
+docker run --name crud -p 8080:8080 -d crud-spring-mysql
+docker network connect spring-mysql crud
+docker logs crud
+
+FRONT-END
+docker build -t front-end-nginx .
+docker run -it --rm -d -p 9090:80 --name frontend-nginx front-end-nginx
+docker network connect spring-mysql frontend-nginx
+
+docker attach frontend-nginx
+
+
+CREATE TABLE alumno(id int not null PRIMARY KEY, nombre VARCHAR (100) not null, edad int);

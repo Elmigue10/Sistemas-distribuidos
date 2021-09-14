@@ -1,0 +1,29 @@
+docker network create --attachable spring-mongo
+docker network inspect spring-mongo
+
+MONGO
+docker pull mongo
+docker run -d -p 27017-27019:27017-27019 --name mongodb mongo
+docker network connect spring-mongo mongodb
+
+docker exec -it mongodb bash
+mongo
+use colegio
+show collections
+db.alumno.find()
+
+API REST MONGO
+https://www.baeldung.com/dockerizing-spring-boot-application
+https://medium.com/swlh/spring-boot-with-docker-2467db187fa2
+mvn clean install
+docker build -t crud-spring-mongo .
+docker run --name crud-mongo -p 8080:8080 -d crud-spring-mongo
+docker network connect spring-mongo crud-mongo
+docker logs crud
+
+FRONT-END
+docker build -t front-end-nginx .
+docker run -it --rm -d -p 3000:80 --name frontend-nginx front-end-nginx
+docker network connect spring-mongo frontend-nginx
+
+docker attach frontend-nginx

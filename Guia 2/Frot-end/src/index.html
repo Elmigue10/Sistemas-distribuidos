@@ -9,75 +9,76 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
- 
-    <input type="hidden" name="indice" id="indice" value="0">
 
-    <div class="forms-container">
-        <div class="guardar-container">
-            <form class="agregar-form" action="#">
-                <h2>GUARDAR ALUMNOS</h2>
-                <label for="id">ID:</label>
-                <input type="text" id="id-input" class="form-control" placeholder="Id">
-                <br>
-                <label for="nombre">NOMBRE:</label>
-                <input type="text" id="nombre-input" class="form-control" placeholder="Nombre">
-                <br>
-                <label for="edad">EDAD:</label>
-                <input type="text" id="edad-input" class="form-control" placeholder="Edad">
-    
-                <div class="buttons-container">
-                    <button id="guardar-btn">GUARDAR</button>
-                </div>
-    
-            </form>
-        </div>
+<input type="hidden" name="indice" id="indice" value="0">
 
-        <div class="editar-container">
-            <form class="agregar-form">
-                <h2>EDITAR ALUMNOS</h2>
-                <label for="id">ID:</label>
-                <input type="text" id="idEdit-input" class="form-control" placeholder="Id">
-                <br>
-                <label for="nombre">NOMBRE:</label>
-                <input type="text" id="nombreEdit-input" class="form-control" placeholder="Nombre">
-                <br>
-                <label for="edad">EDAD:</label>
-                <input type="text" id="edadEdit-input" class="form-control" placeholder="Edad">
-    
-                <div class="buttons-container">
-                    <button id="guardarEdit-btn">GUARDAR</button>
-                </div>
-    
-            </form>
-        </div>
-        
-    </div>
-    
+<div class="forms-container">
+    <div class="guardar-container">
+        <form class="agregar-form" action="#">
+            <h2>GUARDAR ALUMNOS</h2>
+            <label for="id">ID:</label>
+            <input type="text" id="id-input" class="form-control" placeholder="Id">
+            <br>
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre-input" class="form-control" placeholder="Nombre">
+            <br>
+            <label for="edad">EDAD:</label>
+            <input type="text" id="edad-input" class="form-control" placeholder="Edad">
 
-    <div class="container">
-        <div class="alumnos-container">
-            <h2>LISTA DE ALUMNOS</h2>
-            <table class="table-alumnos">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>EDAD</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody id="alumnos-list"></tbody>
-            </table>
-        </div>
-        <div class="alumno-container">
-            <h2>BUSCAR POR ID</h2>
-            <div class="search-div">
-                <input type="text" placeholder="Buscar por id" id="buscar-input" name="search">
-                <button type="submit" id="buscar-btn""><i class="fa fa-search"></i></button>
+            <div class="buttons-container">
+                <button id="guardar-btn">GUARDAR</button>
             </div>
-            <div id="alumno-encontrado-container"></div>
-        </div>
+
+        </form>
     </div>
+
+    <div class="editar-container">
+        <form class="agregar-form">
+            <h2>EDITAR ALUMNOS</h2>
+            <label for="id">ID:</label>
+            <input type="text" id="idEdit-input" class="form-control" placeholder="Id">
+            <br>
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombreEdit-input" class="form-control" placeholder="Nombre">
+            <br>
+            <label for="edad">EDAD:</label>
+            <input type="text" id="edadEdit-input" class="form-control" placeholder="Edad">
+
+            <div class="buttons-container">
+                <button id="guardarEdit-btn">GUARDAR</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="alumnos-container">
+        <h2>LISTA DE ALUMNOS</h2>
+        <table class="table-alumnos">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>EDAD</th>
+                <th>ACCIONES</th>
+            </tr>
+            </thead>
+            <tbody id="alumnos-list"></tbody>
+        </table>
+    </div>
+    <div class="alumno-container">
+        <h2>BUSCAR POR ID</h2>
+        <div class="search-div">
+            <input type="text" placeholder="Buscar por id" id="buscar-input" name="search">
+            <button type="submit" id="buscar-btn"
+            "><i class="fa fa-search"></i></button>
+        </div>
+        <div id="alumno-encontrado-container"></div>
+    </div>
+</div>
 
 </body>
 

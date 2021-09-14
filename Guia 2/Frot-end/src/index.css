@@ -1,32 +1,32 @@
-body{
+body {
     background: #222222;
     color: white;
 }
 
-th{
+th {
     font-size: 0.8vw;
     text-align: left;
     width: 5vw;
 }
 
-tr{
+tr {
     font-size: 0.8vw;
     text-align: left;
 }
 
-tr button{
+tr button {
     font-size: 0.7vw;
     width: 3.6vw;
-    height: 1.2 vw;
+    height: 1.2vw;
 }
 
-.forms-container{
+.forms-container {
     display: flex;
     width: 60vw;
     margin: 0 auto;
 }
 
-.guardar-container{
+.guardar-container {
     background: #333333;
     width: 49%;
     height: 18vw;
@@ -42,7 +42,8 @@ tr button{
     margin-right: 1%;
     border-radius: 1vw;
 }
-.editar-container{
+
+.editar-container {
     background: #333333;
     width: 49%;
     height: 18vw;
@@ -60,49 +61,53 @@ tr button{
     border-radius: 1vw;
 }
 
-.agregar-form{
+.agregar-form {
     padding: 1vw 0 1vw 1vw;
     text-align: left;
 }
-.agregar-form h2{
+
+.agregar-form h2 {
     font-size: 1.5vw;
     text-align: center;
 }
-.agregar-form label{
+
+.agregar-form label {
     font-size: 0.9vw;
     width: 5vw;
     float: left;
     margin-top: 1vw;
 }
 
-.agregar-form input{
+.agregar-form input {
     margin-top: 1vw;
     width: 20vw;
 }
 
-.buttons-container{
+.buttons-container {
     text-align: center;
     margin-top: 1.5vw;
 }
-#guardar-btn{
+
+#guardar-btn {
     font-size: 0.8vw;
     width: 5vw;
     height: 1.5vw;
 }
-#guardarEdit-btn{
+
+#guardarEdit-btn {
     font-size: 0.8vw;
     width: 5vw;
     height: 1.5vw;
 }
 
 
-.container{
+.container {
     display: flex;
     width: 60vw;
     margin: 0 auto;
 }
 
-.alumnos-container{
+.alumnos-container {
     background: #333333;
     width: 49%;
     padding: 1vw 0 1vw 0;
@@ -111,11 +116,11 @@ tr button{
     text-align: center;
 }
 
-.table-alumnos{
+.table-alumnos {
     margin-left: 1vw;
 }
 
-.alumno-container{
+.alumno-container {
     background: #333333;
     width: 49%;
     padding-top: 1vw;
@@ -124,7 +129,7 @@ tr button{
     border-radius: 1vw;
 }
 
-#alumno-encontrado-container{
+#alumno-encontrado-container {
     padding-top: 1vw;
     padding-left: 1vw;
 }
