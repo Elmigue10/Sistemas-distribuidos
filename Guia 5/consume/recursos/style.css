@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@300&display=swap');
+
+body{
+    background: #222222;
+    color: white;
+    font-family: 'Gluten', cursive;
+}
+
+b{
+    margin-left: 2vw;
+    font-size: 0.7vw;
+}
+
+table{
+    width: 90%;
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.titulo{
+    margin: 0 auto;
+    width: 10vw;
+}
+
+.alumnos{
+    background: #333333;
+    margin: 0 auto;
+    width: 40vw;
+    padding-bottom: 1vw;
+    border-radius: 2vw;
+}
