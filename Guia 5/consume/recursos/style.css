@@ -2,7 +2,7 @@
 
 body{
     background: #222222;
-    color: white;
+    color: #222222;
     font-family: 'Gluten', cursive;
 }
 
@@ -13,17 +13,20 @@ b{
 
 table{
     width: 90%;
+    color: white;
     text-align: center;
     font-size: 1.3vw;
 }
 
 .titulo{
+    color: white;
     margin: 0 auto;
     width: 10vw;
 }
 
 .alumnos{
     background: #333333;
+    color: #333333;
     margin: 0 auto;
     width: 40vw;
     padding-bottom: 1vw;
