@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -19,6 +20,8 @@ namespace ServicioSoap
     public class WebService1 : System.Web.Services.WebService
     {
 
+        string ruta = "Server=localhost; database=colegio; password=; user=root;";
+
         [WebMethod]
         public string HelloWorld()
         {
@@ -29,7 +32,6 @@ namespace ServicioSoap
         public List<string> listar() {
 
             List<string> listarAlumno = new List<string>();
-            string ruta = "Server=localhost; database=colegio; password=; user=root;";
             MySqlConnection conexion = new MySqlConnection(ruta);
             conexion.Open();
             MySqlCommand command = conexion.CreateCommand();
@@ -47,6 +49,63 @@ namespace ServicioSoap
             return listarAlumno;
         }
 
+
+        [WebMethod]
+        public void guardar(int id, string nombre, int edad)
+        {
+            Alumno alumno = null;
+            string sql = "Insert into alumno values("+id+","+"'"+nombre+"'"+","+edad+")";
+            MySqlConnection conexion = new MySqlConnection(ruta);
+            MySqlCommand command = new MySqlCommand(sql, conexion);
+            MySqlDataReader reader;
+            conexion.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+            }
+            conexion.Close();
+
+        }
+
+
+        [WebMethod]
+        public void eliminar(int id) {
+
+            String sql = "delete from alumno where id ="+id;
+            MySqlConnection conexion = new MySqlConnection(ruta);
+            MySqlCommand command = new MySqlCommand(sql, conexion);
+            MySqlDataReader reader;
+            conexion.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+            }
+            conexion.Close();
+
+        }
+
+
+        [WebMethod]
+        public Alumno editar(int id, string nombre, int edad)
+        {
+            var sql = "update alumno set nombre ="+"'"+nombre+"'"+ ", edad ="+edad+" where id ="+id;
+            MySqlConnection conexion = new MySqlConnection(ruta);
+            MySqlCommand command = new MySqlCommand(sql, conexion);
+            MySqlDataReader reader;
+            conexion.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+            }
+            conexion.Close();
+
+            Alumno alumno = new Alumno();
+            alumno.id = id;
+            alumno.nombre = nombre;
+            alumno.edad = edad;
+
+            return alumno;
+        }
 
     }
 }
