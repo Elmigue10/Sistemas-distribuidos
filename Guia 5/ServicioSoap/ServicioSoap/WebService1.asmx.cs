@@ -53,16 +53,12 @@ namespace ServicioSoap
         [WebMethod]
         public void guardar(int id, string nombre, int edad)
         {
-            Alumno alumno = null;
             string sql = "Insert into alumno values("+id+","+"'"+nombre+"'"+","+edad+")";
             MySqlConnection conexion = new MySqlConnection(ruta);
             MySqlCommand command = new MySqlCommand(sql, conexion);
             MySqlDataReader reader;
             conexion.Open();
             reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-            }
             conexion.Close();
 
         }
@@ -77,9 +73,6 @@ namespace ServicioSoap
             MySqlDataReader reader;
             conexion.Open();
             reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-            }
             conexion.Close();
 
         }
@@ -94,9 +87,6 @@ namespace ServicioSoap
             MySqlDataReader reader;
             conexion.Open();
             reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-            }
             conexion.Close();
 
             Alumno alumno = new Alumno();

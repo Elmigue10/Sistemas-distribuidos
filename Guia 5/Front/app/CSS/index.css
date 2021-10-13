@@ -1,0 +1,44 @@
+#tabla_div{
+    width: 70%;
+    margin: 1%;
+}
+thead{
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+#crearUsuarios{
+    font-size: 40;
+}
+
+#tipoDocumento,.form-control,.form-label{
+    font-size: 15px;
+}
+
+.divCrearBtn{
+    
+    text-align: right;
+    width: 71%;;
+    float: left;
+}
+
+.modal-header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+
+#filaSinDatos{
+    text-align: center;
+    color: red;
+}
+
+#filaDinamica{
+    text-align: center;
+}
+
+.col-12{
+    text-align: right;
+}
