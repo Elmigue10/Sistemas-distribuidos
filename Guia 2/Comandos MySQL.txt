@@ -3,7 +3,7 @@ docker network inspect spring-mysql
 
 MYSQL
 docker pull mysql
-docker run -d -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
+docker run -d -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql --lower_case_table_names=1
 docker network connect spring-mysql mysql-db
 
 docker exec -it mysql-db mysql -p
